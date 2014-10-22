@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/EvanHiggins/.vimother'
-let g:netrw_dirhist_2='/Users/EvanHiggins'
-let g:netrw_dirhist_3='/Users/EvanHiggins/Documents/Programming/Python/snake'
-let g:netrw_dirhist_4='/Users/EvanHiggins/Documents/Programming/Python'
-let g:netrw_dirhist_5='/Users/EvanHiggins/Documents/Programming/Python/snake'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/EvanHiggins/Dropbox/CS/ENGR101'
+let g:netrw_dirhist_2='/Users/EvanHiggins/Documents/Programming/Python/snake'
+let g:netrw_dirhist_3='/Users/EvanHiggins/Documents/Programming/Python'
+let g:netrw_dirhist_4='/Users/EvanHiggins/Documents/Programming/Python/snake'
+let g:netrw_dirhist_5='/Users/EvanHiggins/Documents/Programming/Python/snake/lib'
+let g:netrw_dirhist_6='/Users/EvanHiggins/Documents/programming/python'
+let g:netrw_dirhist_7='/Users/EvanHiggins/Documents/programming/python/snake'
+let g:netrw_dirhist_8='/Users/EvanHiggins/.tmux'
+let g:netrw_dirhist_9='/Users/EvanHiggins'

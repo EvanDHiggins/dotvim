@@ -1,13 +1,5 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
-let s:cpo_save=&cpo
-set cpo&vim
-inoremap <buffer> <silent> <C-%> =UltiSnips#JumpForwards()
-snoremap <buffer> <silent>  :call UltiSnips#JumpBackwards()
-snoremap <buffer> <silent> <C-%> :call UltiSnips#JumpForwards()
-inoremap <buffer> <silent>  =UltiSnips#JumpBackwards()
-let &cpo=s:cpo_save
-unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -111,58 +103,112 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-18
+21
 normal! zo
-42
+41
+normal! zo
+50
 normal! zo
 51
 normal! zo
+52
+normal! zo
+53
+normal! zo
 60
 normal! zo
-62
+68
 normal! zo
-64
+69
 normal! zo
-74
+70
 normal! zo
-84
+79
 normal! zo
 88
 normal! zo
-94
+102
 normal! zo
-108
+111
 normal! zo
-117
+115
 normal! zo
-121
+116
 normal! zo
-122
+137
 normal! zo
-139
+146
 normal! zo
-148
+153
 normal! zo
-155
+157
 normal! zo
-159
+174
 normal! zo
-176
+183
 normal! zo
-185
+186
 normal! zo
-188
+198
 normal! zo
-200
+204
 normal! zo
-206
+208
 normal! zo
-let s:l = 35 - ((17 * winheight(0) + 24) / 48)
+219
+normal! zo
+230
+normal! zo
+233
+normal! zo
+236
+normal! zo
+247
+normal! zo
+258
+normal! zo
+263
+normal! zo
+137
+normal! zo
+146
+normal! zo
+153
+normal! zo
+157
+normal! zo
+174
+normal! zo
+183
+normal! zo
+186
+normal! zo
+198
+normal! zo
+204
+normal! zo
+208
+normal! zo
+219
+normal! zo
+230
+normal! zo
+233
+normal! zo
+236
+normal! zo
+247
+normal! zo
+258
+normal! zo
+263
+normal! zo
+let s:l = 131 - ((33 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 05|
+131
+normal! 09|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

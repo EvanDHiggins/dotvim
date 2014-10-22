@@ -103,12 +103,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 129 - ((47 * winheight(0) + 24) / 48)
+let s:l = 111 - ((40 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-129
-normal! 05|
+111
+normal! 044|
 lcd ~/Dropbox/CS
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
