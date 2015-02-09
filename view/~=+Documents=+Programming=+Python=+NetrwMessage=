@@ -30,7 +30,7 @@ setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
+setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
@@ -78,7 +78,7 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=8
+setlocal shiftwidth=4
 setlocal noshortname
 setlocal nosmartindent
 setlocal softtabstop=0
@@ -109,7 +109,7 @@ exe s:l
 normal! zt
 1
 normal! 0
-lcd ~/Documents/Programming/Python
+lcd ~/Documents/programming/Python
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

@@ -3,9 +3,22 @@ argglobal
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <buffer> <silent> <C-%> =UltiSnips#JumpForwards()
+imap <buffer> <S-Tab> <Plug>delimitMateS-Tab
+imap <buffer> <S-BS> <Plug>delimitMateS-BS
+imap <buffer> <BS> <Plug>delimitMateBS
 snoremap <buffer> <silent>  :call UltiSnips#JumpBackwards()
 snoremap <buffer> <silent> <C-%> :call UltiSnips#JumpForwards()
+imap <buffer> <silent> g <Plug>delimitMateJumpMany
+imap <buffer>  <Plug>delimitMateBS
 inoremap <buffer> <silent>  =UltiSnips#JumpBackwards()
+imap <buffer> " <Plug>delimitMate"
+imap <buffer> ' <Plug>delimitMate'
+imap <buffer> ( <Plug>delimitMate(
+imap <buffer> ) <Plug>delimitMate)
+imap <buffer> [ <Plug>delimitMate[
+imap <buffer> ] <Plug>delimitMate]
+imap <buffer> ` <Plug>delimitMate`
+imap <buffer> } <Plug>delimitMate}
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -117,7 +130,7 @@ exe s:l
 normal! zt
 2
 normal! 011|
-lcd ~/Documents/Programming/C
+lcd ~/Documents/programming/C
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

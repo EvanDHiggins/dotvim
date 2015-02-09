@@ -2,6 +2,9 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
+imap <buffer> <S-Tab> <Plug>delimitMateS-Tab
+imap <buffer> <S-BS> <Plug>delimitMateS-BS
+imap <buffer> <BS> <Plug>delimitMateBS
 inoremap <buffer> <silent> <S-Up> :Pexplore
 inoremap <buffer> <silent> <S-Down> :Nexplore
 nmap <buffer>  <Plug>NetrwHideEdit
@@ -9,8 +12,17 @@ nmap <buffer>  <Plug>NetrwRefresh
 nnoremap <buffer> <F1> :he netrw-quickhelp
 nnoremap <buffer> <silent> <S-Up> :Pexplore
 nnoremap <buffer> <silent> <S-Down> :Nexplore
-imap <buffer>  <Plug>NetrwHideEdit
+imap <buffer> <silent> g <Plug>delimitMateJumpMany
+imap <buffer>  <Plug>delimitMateBS
 imap <buffer>  <Plug>NetrwRefresh
+imap <buffer> " <Plug>delimitMate"
+imap <buffer> ' <Plug>delimitMate'
+imap <buffer> ( <Plug>delimitMate(
+imap <buffer> ) <Plug>delimitMate)
+imap <buffer> [ <Plug>delimitMate[
+imap <buffer> ] <Plug>delimitMate]
+imap <buffer> ` <Plug>delimitMate`
+imap <buffer> } <Plug>delimitMate}
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -101,7 +113,7 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
-setlocal swapfile
+setlocal noswapfile
 setlocal synmaxcol=3000
 if &syntax != 'netrw'
 setlocal syntax=netrw
@@ -122,7 +134,7 @@ exe s:l
 normal! zt
 11
 normal! 0
-lcd ~/Dropbox
+lcd ~/
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

@@ -103,112 +103,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-21
-normal! zo
-41
-normal! zo
-50
-normal! zo
-51
-normal! zo
-52
-normal! zo
-53
-normal! zo
-60
-normal! zo
-68
-normal! zo
-69
-normal! zo
-70
-normal! zo
-79
-normal! zo
-88
-normal! zo
-102
-normal! zo
-111
-normal! zo
-115
-normal! zo
-116
-normal! zo
-137
-normal! zo
-146
-normal! zo
-153
-normal! zo
-157
-normal! zo
-174
-normal! zo
-183
-normal! zo
-186
-normal! zo
-198
-normal! zo
-204
-normal! zo
-208
-normal! zo
-219
-normal! zo
-230
-normal! zo
-233
-normal! zo
-236
-normal! zo
-247
-normal! zo
-258
-normal! zo
-263
-normal! zo
-137
-normal! zo
-146
-normal! zo
-153
-normal! zo
-157
-normal! zo
-174
-normal! zo
-183
-normal! zo
-186
-normal! zo
-198
-normal! zo
-204
-normal! zo
-208
-normal! zo
-219
-normal! zo
-230
-normal! zo
-233
-normal! zo
-236
-normal! zo
-247
-normal! zo
-258
-normal! zo
-263
-normal! zo
-let s:l = 131 - ((33 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-131
-normal! 09|
+1
+normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

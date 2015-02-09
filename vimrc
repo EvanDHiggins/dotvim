@@ -19,6 +19,8 @@ Plugin 'bling/vim-airline'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -35,7 +37,7 @@ set noshowmode
 
 "Sets snippet directory to something outside of /bundle
 let g:UltiSnipsSnippetDirectories=["~/.vim/snippets"]
-let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsExpandTrigger="<tab>"
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
@@ -43,7 +45,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_key_list_previous_completion=['<Up>']
 
 "" Ultisnips
-noremap <leader>u :vsplit<CR> :UltiSnipsEdit<CR>
+noremap <leader>U :vsplit<CR> :UltiSnipsEdit<CR>
 
 "This is the voodoo required to make utlisnips work well enough with
 "YouCompleteMe.  Ctrl-Space is the trigger now, not the greatest, but it works
@@ -51,7 +53,6 @@ let g:UltiSnipsExpandTrigger = '<C-@>'   " terminals send C-@ when C-Space is pr
 let g:UltiSnipsJumpForwardTrigger = '<C-%>' " some key I do not use at all
 
 let g:UltiSnipsSnippetsDir="~/.vim/snippets"
-let g:UltiSnipsSnippetDirectories  = ["UltiSnips"]
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -74,12 +75,14 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 
 "Sets background dark. Very important that this is first for some strange
 "reason
-set background=dark
+"set background=dark
 
 "Enables syntax coloring
 syntax enable
 set number
+"colorscheme mayansmoke
 colorscheme jellybeans
+"colorscheme pyte
 
 "Used to enable 256 colors
 set t_Co=256
@@ -163,18 +166,20 @@ noremap - dd
 :nnoremap <leader>ve :vsplit $MYVIMRC<CR>
 :nnoremap <leader>sv :source $MYVIMRC<CR>
 
+"Add semicolon to end of line
+:nnoremap <leader>; $a;<Esc>
 
-
+" Removes trailing whitespace
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "********************
 "
 "    Insert Mode
 "
 "********************
 
-"Most important mapping ever, jk quits insert mode
+"Most important mapping ever, jk quits insert mode. Just mash j and k quicy
 :inoremap jk <esc>l
-:inoremap kl <C-o>$
-:inoremap lk <C-o>^
+:inoremap kj <esc>l
 
 "allows movement through autocompletion lists
 :inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
