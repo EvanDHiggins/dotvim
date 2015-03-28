@@ -1,4 +1,21 @@
 
+"********************
+"
+"   General Config
+"
+"********************
+
+"Sets general config files
+:set shiftwidth=4
+:set smarttab
+:set expandtab
+
+"Sets leader to spacebar
+:let mapleader = "\<space>"
+
+set backspace=2
+
+
 "*******************
 "
 "       Vundle
@@ -14,13 +31,12 @@ call vundle#begin()
 "Plugins should go here
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -36,23 +52,21 @@ filetype plugin indent on
 set noshowmode
 
 "Sets snippet directory to something outside of /bundle
-let g:UltiSnipsSnippetDirectories=["~/.vim/snippets"]
-"let g:UltiSnipsExpandTrigger="<tab>"
+:let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+:let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 "" YouCompleteMe
-let g:ycm_key_list_previous_completion=['<Up>']
+:let g:ycm_key_list_previous_completion=['<Up>']
+:let g:clang_user_options="-std=c++0x"
 
 "" Ultisnips
-noremap <leader>U :vsplit<CR> :UltiSnipsEdit<CR>
+:noremap <leader>u :vsplit<CR>:UltiSnipsEdit<CR>
 
 "This is the voodoo required to make utlisnips work well enough with
 "YouCompleteMe.  Ctrl-Space is the trigger now, not the greatest, but it works
-let g:UltiSnipsExpandTrigger = '<C-@>'   " terminals send C-@ when C-Space is pressed.
-let g:UltiSnipsJumpForwardTrigger = '<C-%>' " some key I do not use at all
-
-let g:UltiSnipsSnippetsDir="~/.vim/snippets"
+:let g:UltiSnipsExpandTrigger = '<C-@>'   " terminals send C-@ when C-Space is pressed.
+:let g:UltiSnipsJumpForwardTrigger = '<C-%>' " some key I do not use at all
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -80,9 +94,7 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 "Enables syntax coloring
 syntax enable
 set number
-"colorscheme mayansmoke
 colorscheme jellybeans
-"colorscheme pyte
 
 "Used to enable 256 colors
 set t_Co=256
@@ -95,29 +107,6 @@ set colorcolumn=80
 
 "" YouCompleteMe
 let g:ycm_key_list_previous_completion=['<Up>']
-
-"
-"********************
-"
-"   General Config
-"
-"********************
-
-"Sets general config files
-:set shiftwidth=4
-:set smarttab
-:set expandtab
-
-
-"Allows folding via brackets
-:set foldmethod=syntax
-:set foldenable
-
-"Sets leader to spacebar
-:let mapleader = "\<space>"
-
-set backspace=2
-
 
 
 "********************
@@ -154,8 +143,19 @@ set backspace=2
 "Faster line deletion
 noremap - dd
 
+"Arrow keys shift lines up and down
+:noremap <up> ddkkp
+:noremap <down> ddp
+
+:noremap <left> <<
+:noremap <right> >>
+
 "Allows quick access to file browser
 :noremap <leader>e :e.<CR>
+
+"Add some extra lines when using o command
+:noremap <leader>O o<CR><C-o>O
+:noremap <leader>o o<C-o>O
 
 "Easier saving and save-quitting. :q! is not mapped intentionally
 :noremap <leader>w :w<CR>
@@ -200,7 +200,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "********************
 
 "Indents/Unindents selected text
-:vnoremap < <gv
-:vnoremap > >gv
+:vnoremap <left> <gv
+:vnoremap <right> >gv
 
 
