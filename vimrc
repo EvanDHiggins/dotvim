@@ -36,6 +36,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
@@ -45,6 +46,8 @@ filetype plugin indent on
 "      Plugins
 "
 "********************
+
+:noremap <leader>t :NERDTreeToggle<CR>
 
 "Forces Airline to run all the time
 :set laststatus=2
