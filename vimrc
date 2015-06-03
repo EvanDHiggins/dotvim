@@ -37,6 +37,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
@@ -84,6 +85,15 @@ endfunction
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 "********************
 "
 "Syntax And Coloring
@@ -206,4 +216,10 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 :vnoremap <left> <gv
 :vnoremap <right> >gv
 
+"There seems to be a mapping involving escape that makes <Esc> take a second
+"to actually exit from Visual. This binding fixes that.
+:vnoremap <Esc> <Esc>
 
+"This is the allow easy exiting of visual mode with my Pok3r keyboard
+"I don't believe it will cause any conflicts on my other boards
+:vnoremap ` <Esc>
