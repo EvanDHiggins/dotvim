@@ -38,6 +38,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive.git'
 
 call vundle#end()
 filetype plugin indent on
