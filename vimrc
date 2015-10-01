@@ -13,8 +13,7 @@
 "Sets leader to spacebar
 :let mapleader = "\<space>"
 
-set backspace=2
-
+:set backspace=2
 
 "*******************
 "
@@ -22,12 +21,12 @@ set backspace=2
 "
 "********************
 "Vundle complains about fish shell, this changes commands to bash
-set shell=/bin/bash
+:set shell=/bin/bash
 "This is all just required for Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+:set nocompatible
+:filetype off
+:set rtp+=~/.vim/bundle/Vundle.vim
+:call vundle#begin()
 "Plugins should go here
 
 Plugin 'gmarik/Vundle.vim'
@@ -41,8 +40,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive.git'
 
-call vundle#end()
-filetype plugin indent on
+:call vundle#end()
+:filetype plugin indent on
 "********************
 "
 "      Plugins
@@ -54,7 +53,7 @@ filetype plugin indent on
 "Forces Airline to run all the time
 :set laststatus=2
 "Turns off standard mode indicator. Replaced by Airline
-set noshowmode
+:set noshowmode
 
 "Sets snippet directory to something outside of /bundle
 :let g:UltiSnipsSnippetDirectories=["UltiSnips"]
@@ -84,17 +83,21 @@ function! g:UltiSnips_Complete()
     return ""
 endfunction
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+:au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 "Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+:set statusline+=%#warningmsg#
+:set statusline+=%{SyntasticStatuslineFlag()}
+:set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_always_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+:let g:syntastic_always_populate_loc_list = 1
+:let g:syntastic_always_auto_loc_list = 1
+:let g:syntastic_check_on_open = 1
+:let g:syntastic_check_on_wq = 0
+
+:let g:ctrlp_extensions = ['tag']
+
+:set tags+=tags
 "********************
 "
 "Syntax And Coloring
@@ -106,21 +109,21 @@ let g:syntastic_check_on_wq = 0
 "set background=dark
 
 "Enables syntax coloring
-syntax enable
-set number
-colorscheme jellybeans
+:syntax enable
+:set number
+:colorscheme jellybeans
 
 "Used to enable 256 colors
-set t_Co=256
+:set t_Co=256
 
 "Sets working directory to that of the file open in the buffer
-set autochdir
+:set autochdir
 
 "Highlights column 80
-set colorcolumn=80
+:set colorcolumn=80
 
 "" YouCompleteMe
-let g:ycm_key_list_previous_completion=['<Up>']
+:let g:ycm_key_list_previous_completion=['<Up>']
 
 
 "********************
@@ -135,7 +138,6 @@ let g:ycm_key_list_previous_completion=['<Up>']
 "Auto Load/Save folds on open/close
 :au BufWinLeave * mkview
 :au BufWinEnter * silent loadview
-
 
 
 "********************
@@ -205,8 +207,6 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 :inoremap {{     {
 :inoremap {}     {}
 
-
-
 "********************
 "
 "    Visual Mode
@@ -216,11 +216,3 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "Indents/Unindents selected text
 :vnoremap <left> <gv
 :vnoremap <right> >gv
-
-"There seems to be a mapping involving escape that makes <Esc> take a second
-"to actually exit from Visual. This binding fixes that.
-:vnoremap <Esc> <Esc>
-
-"This is the allow easy exiting of visual mode with my Pok3r keyboard
-"I don't believe it will cause any conflicts on my other boards
-:vnoremap ` <Esc>
