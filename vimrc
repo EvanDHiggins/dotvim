@@ -1,4 +1,3 @@
-
 "********************
 "
 "   General Config
@@ -36,9 +35,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-rails'
 
 :call vundle#end()
 :filetype plugin indent on
@@ -86,14 +84,14 @@ endfunction
 :au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 "Syntastic
-:set statusline+=%#warningmsg#
-:set statusline+=%{SyntasticStatuslineFlag()}
-:set statusline+=%*
+":set statusline+=%#warningmsg#
+":set statusline+=%{SyntasticStatuslineFlag()}
+":set statusline+=%*
 
-:let g:syntastic_always_populate_loc_list = 1
-:let g:syntastic_always_auto_loc_list = 1
-:let g:syntastic_check_on_open = 1
-:let g:syntastic_check_on_wq = 0
+":let g:syntastic_always_populate_loc_list = 1
+":let g:syntastic_always_auto_loc_list = 1
+":let g:syntastic_check_on_open = 1
+":let g:syntastic_check_on_wq = 0
 
 :let g:ctrlp_extensions = ['tag']
 
