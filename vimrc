@@ -48,6 +48,9 @@ Plugin 'tpope/vim-rails'
 
 :noremap <leader>t :NERDTreeToggle<CR>
 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 "Forces Airline to run all the time
 :set laststatus=2
 "Turns off standard mode indicator. Replaced by Airline
@@ -133,16 +136,15 @@ endfunction
 "Saves current file when loading a new file into the buffer
 ":autocmd BufNewFile * :write
 
-"Auto Load/Save folds on open/close
-:au BufWinLeave * mkview
-:au BufWinEnter * silent loadview
-
-
 "********************
 "
 "    Normal Mode
 "
 "********************
+
+"Naviage Buffers faster
+:nnoremap <leader>bn :bn<CR>
+:nnoremap <leader>bp :bp<CR>
 
 "Creates a function prototype of the current line, needs to be made into a
 "true function at some point
@@ -163,9 +165,6 @@ noremap - dd
 
 :noremap <left> <<
 :noremap <right> >>
-
-"Allows quick access to file browser
-:noremap <leader>e :e.<CR>
 
 "Add some extra lines when using o command
 :noremap <leader>O o<CR><C-o>O
