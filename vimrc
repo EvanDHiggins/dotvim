@@ -173,6 +173,7 @@ noremap - dd
 "Easier saving and save-quitting. :q! is not mapped intentionally
 :noremap <leader>w :w<CR>
 :noremap <leader>wq :wq<CR>
+:noremap <leader>q :q<CR>
 
 "Taken from "Learn Vimscript the Hard Way" super convenient way of editting
 ".vimrc
