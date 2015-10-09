@@ -140,7 +140,7 @@ endfunction
 :set splitbelow
 :set splitright
 
-"Maps to my typical leader pattern
+"Maps split switching to my typical leader pattern
 :nnoremap <leader>sh <C-W><C-H>
 :nnoremap <leader>sj <C-W><C-J>
 :nnoremap <leader>sk <C-W><C-k>
@@ -155,6 +155,8 @@ endfunction
 "Naviage Buffers faster
 :nnoremap <leader>bn :bn<CR>
 :nnoremap <leader>bp :bp<CR>
+
+:nnoremap <leader>bd :b#<bar>bd#<CR>
 
 "Some Nice movement help
 :noremap J 10j
