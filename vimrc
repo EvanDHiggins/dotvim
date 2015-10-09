@@ -4,6 +4,8 @@
 "
 "********************
 
+:nnoremap <leader>a <C-a>
+
 "Sets general config files
 :set shiftwidth=4
 :set smarttab
