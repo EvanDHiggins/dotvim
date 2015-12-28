@@ -49,7 +49,7 @@ Plugin 'skwp/vim-rspec'
 "
 "********************
 
-:noremap <leader>t :NERDTreeToggle<CR>
+:noremap <leader>n :NERDTreeToggle<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -153,11 +153,15 @@ endfunction
 "
 "********************
 
-"Naviage Buffers faster
-:nnoremap <leader>bn :bn<CR>
-:nnoremap <leader>bp :bp<CR>
+"Navigate Buffers faster
+:nnoremap <leader>nb :bn<CR>
+:nnoremap <leader>pb :bp<CR>
+:nnoremap <leader>db :b#<bar>bd#<CR>
 
-:nnoremap <leader>bd :b#<bar>bd#<CR>
+:nnoremap <leader>nt :tabn<CR>
+:nnoremap <leader>pt :tabp<CR>
+:nnoremap <leader>ts :tab split<CR>
+:nnoremap <leader>tc :tab close<CR>
 
 "Some Nice movement help
 :noremap J 10j
