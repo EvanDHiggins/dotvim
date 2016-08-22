@@ -38,8 +38,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'skwp/vim-rspec'
 
 :call vundle#end()
 :filetype plugin indent on
