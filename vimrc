@@ -30,16 +30,16 @@
 :call vundle#begin()
 "Plugins should go here
 
+Plugin 'kballard/vim-swift'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'skwp/vim-rspec'
 
 :call vundle#end()
 :filetype plugin indent on
@@ -50,6 +50,7 @@ Plugin 'skwp/vim-rspec'
 "********************
 
 :noremap <leader>t :NERDTreeToggle<CR>
+:let NERDTreeIgnore = ['\.pyc$', '\.hi$', '\.o$']
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -67,6 +68,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "" YouCompleteMe
 :let g:ycm_key_list_previous_completion=['<Up>']
 :let g:clang_user_options="-std=c++0x"
+:let g:ycm_register_as_syntastic_checker="true"
 
 "" Ultisnips
 :noremap <leader>u :vsplit<CR>:UltiSnipsEdit<CR>
@@ -89,19 +91,27 @@ endfunction
 
 :au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-"Syntastic
-":set statusline+=%#warningmsg#
-":set statusline+=%{SyntasticStatuslineFlag()}
-":set statusline+=%*
-
-":let g:syntastic_always_populate_loc_list = 1
-":let g:syntastic_always_auto_loc_list = 1
-":let g:syntastic_check_on_open = 1
-":let g:syntastic_check_on_wq = 0
-
 :let g:ctrlp_extensions = ['tag']
 
 :set tags+=tags
+
+:let g:UltiSnipsExpandTrigger = '<c-space>'
+
+""""
+"Syntastic
+""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatusLineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+autocmd VimEnter * SyntasticToggleMode "Default to passive mode
+
+:nnoremap <leader>sc :SyntasticCheck<CR>
+:nnoremap <leader>sr :SyntasticReset<CR>
 "********************
 "
 "Syntax And Coloring
@@ -114,7 +124,7 @@ endfunction
 
 "Enables syntax coloring
 :syntax enable
-:set number
+:set rnu
 :colorscheme jellybeans
 
 "Used to enable 256 colors
