@@ -30,7 +30,6 @@
 :call vundle#begin()
 "Plugins should go here
 
-Plugin 'kballard/vim-swift'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
@@ -40,6 +39,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'derekwyatt/vim-scala'
 
 :call vundle#end()
 :filetype plugin indent on
