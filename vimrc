@@ -125,8 +125,9 @@ autocmd VimEnter * SyntasticToggleMode "Default to passive mode
 
 "Enables syntax coloring
 :syntax enable
-:set rnu
+:set number
 :colorscheme jellybeans
+:set cursorline
 
 "Used to enable 256 colors
 :set t_Co=256
