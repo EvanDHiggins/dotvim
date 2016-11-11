@@ -39,7 +39,6 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
-Plugin 'derekwyatt/vim-scala'
 
 :call vundle#end()
 :filetype plugin indent on
@@ -64,7 +63,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "Sets snippet directory to something outside of /bundle
 :let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
-:let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+:let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 "" YouCompleteMe
 :let g:ycm_key_list_previous_completion=['<Up>']
