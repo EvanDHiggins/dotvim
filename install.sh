@@ -2,6 +2,7 @@
 
 VIMINSTALL=${HOME}/.vim-install/
 VIMSRC=${HOME}/.vim-source/
+SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 sudo apt install tmux zsh libncurses5-dev libgnome2-dev libgnomeui-dev libgtk2.0-dev \
     libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
@@ -22,12 +23,15 @@ cd $VIMSRC
 
 sudo make install
 
-git clone https://github.com/gmarik/Vundle ${HOME}/.vim/bundle/Vundle.vim
-cd ~/.vim
+git clone https://github.com/gmarik/Vundle $SCRIPTDIR/bundle/Vundle.vim
+cd $SCRIPTDIR
 $VIMINSTALL/bin/vim +PluginInstall +qall
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone git://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
+chsh -s /bin/zsh
 
-rm ~/.zshrc
-ln -s ~/.vim/.zshrc ~/.zshrc
-ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+ln -s $SCRIPTDIR/.zshrc ${HOME}/.zshrc
+ln -s $SCRIPTDIR/.tmux.conf ${HOME}/.tmux.conf
+
+cd $SCRIPTDIR/bundle/YouCompleteMe/
+./install.py
