@@ -16,6 +16,8 @@
 
 :set backspace=2
 
+:set shell=/usr/bin/zsh
+
 "*******************
 "
 "       Vundle
@@ -39,6 +41,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fugitive'
 
 :call vundle#end()
 :filetype plugin indent on
@@ -51,6 +55,7 @@ Plugin 'kien/ctrlp.vim'
 :noremap <leader>t :NERDTreeToggle<CR>
 :let NERDTreeIgnore = ['\.pyc$', '\.hi$', '\.o$']
 :noremap <leader>n :NERDTreeToggle<CR>
+:let NERDTREEShowHidden=1
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -163,6 +168,9 @@ autocmd VimEnter * SyntasticToggleMode "Default to passive mode
 "    Normal Mode
 "
 "********************
+
+"Disables those stupid fucking bells
+:set belloff=all
 
 "Navigate Buffers faster
 :nnoremap <leader>nb :bn<CR>

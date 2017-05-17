@@ -3,9 +3,17 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/ehiggins/.oh-my-zsh
-export GOPATH=${HOME}/golang
+export GOPATH=${HOME}/go
+export PATH=${PATH}:${GOPATH}/bin
+export PATH=${PATH}:${HOME}/bin
 alias vim=${HOME}/.vim-install/bin/vim
 alias vi=${HOME}/.vim-install/bin/vim
+
+alias first="awk '{print \$1}'"
+alias second="awk '{print \$2}'"
+alias third="awk '{print \$3}'"
+alias fourth="awk '{print \$4}'"
+alias fifth="awk '{print \$5}'"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -80,3 +88,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source /usr/local/bin/activate.sh
